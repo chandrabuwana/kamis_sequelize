@@ -1,0 +1,25 @@
+{
+  "name": "kamis_sequelize",
+  "version": "1.0.0",
+  "description": "Kamis_sequelize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandrabuwana/kamis_sequelize.git"
+  },
+  "author": "Muhammad Chandra Buwana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandrabuwana/kamis_sequelize/issues"
+  },
+  "homepage": "https://github.com/chandrabuwana/kamis_sequelize#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "nodemon": "^1.12.0",
+    "pg": "^7.3.0",
+    "sequelize": "^4.8.0"
+  }
+}
