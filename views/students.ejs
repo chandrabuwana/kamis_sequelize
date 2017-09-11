@@ -5,16 +5,19 @@
     <title>Student</title>
   </head>
   <body>
-    <h1>Student</h1>
+    <h1>STUDENT</h1>
     <a href="/">back</a>
     <table>
       <tr>
+        <td>Id</td>
         <td>First Name</td>
         <td>Last Name</td>
         <td>Email</td>
+        <td>Action</td>
       </tr>
       <%data.forEach(d=>{%>
         <tr>
+          <td><%=d.id%></td>
           <td><%=d.first_name%></td>
           <td><%=d.last_name%></td>
           <td><%=d.email%></td>

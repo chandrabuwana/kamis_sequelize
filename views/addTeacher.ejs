@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Halaman Add Teacher</h1>
+    <form class="" action="/teacher/addTeacher" method="post">
+      <input type="string" name="first_name" placeholder="Insert Your First Name">
+      <input type="string" name="last_name" placeholder="Insert Your First Name">
+      <input type="string" name="email" placeholder="Insert Your Email">
+      <select class="" name="SubjectId">
+        <%data.forEach(subjects=>{%>
+          <option value="<%= subjects.id%>"><%=subjects.subject_name%></option>
+        <%})%>
+      </select>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

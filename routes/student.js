@@ -40,12 +40,12 @@ router.get('/delete/:id',(req,res)=>{
 })
 
 router.get('/edit/:id',(req,res)=>{
-  model.Student.findAll({
-    where:{ id:req.params.id
-    }
-  })
+  model.Student.findById(req.params.id)
   .then(student=>{
-    res.render('studentedit',{student:data[0],title:'halaman edit'})
+    res.render('studentedit',{data:student})
+  })
+  .catch(err =>{
+    res.send(err)
   })
 })
 
@@ -55,11 +55,14 @@ router.post('/edit/:id',(req,res)=>{
     last_name:req.body.last_name,
     email:req.body.email
   },{
-    where:{id:req.params.id}
+      where:{id:req.params.id}
     })
-      .then(data=>{
-        res.redirect('/students')
-      })
+    .then(data=>{
+      res.redirect('/students')
+    })
+    .catch(err=>{
+      res.send(err)
+    })
 })
 
 
