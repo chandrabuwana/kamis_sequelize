@@ -7,41 +7,34 @@
   <body>
     <h1>Teacher</h1>
     <a href="/">Back</a>
+    <a href="/teacher/add">ADD teacher</a>
 </form>
     <table border="3px">
       <tr>
         <th>Id</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <!-- <th>Full Name</th> -->
         <th>Email</th>
         <th>Subject</th>
+        <th>Action</th>
       </tr>
       <%data.forEach(d=>{%>
         <tr>
           <td><%=d.id%></td>
           <td><%=d.first_name%></td>
           <td><%=d.last_name%></td>
-          <!-- <td><%=d.first_name%> <%=d.last_name%></td> -->
           <td><%=d.email%></td>
-          <!-- <td><%=d.updateAt%></td> -->
-          <td><%=d.Subject.subject_name%></td>
+          <td>
+            <% if(d.SubjectId == null){ %>
+            <td>Unassigned</td>
+            <% } else { %>
+              <%= d.Subject.subject_name %>
+            <% } %>
+          </td>
+            <td><a href="/teacher/edit/<%=d.id%>">Edit</a>
+            <a href="/teacher/delete/<%=d.id%>">Delete</a></td>
         </tr>
-    <%  })%>
-    <form class="" action="/teachers" method="post">
-      <input type="string" name="first_name" placeholder="Input Your First Name">
-      <input type="string" name="last_name" placeholder="Input Your Last Name">
-      <input type="string" name="email" placeholder="Input Your Email">
-
-      <input type="submit" value="submit">
-      <label>Subject :</label>
-      <select class="" name="SubjectId">
-        <%subject.forEach(subject=>{%>
-          <option value="<%=subject.id%>"><%=subject.subject_name%></option>
-      <%  })%>
-      </select>
-      <input type="submit"  value="submit">
-    </form>
+      <%})%>
     </table>
   </body>
 </html>

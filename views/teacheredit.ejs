@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Student EDIT</title>
+  </head>
+  <body>
+    <h1>Halaman Student edit</h1>
+    <a href="/">Back </a><br>
+    <table>
+      <form class="" action="/teacher/edit/<%=data.id%>" method="post" >
+          <input type="text" name="first_name" placeholder=" First Name" value="<%=data.first_name%>">
+          <input type="text" name="last_name" placeholder="Last Name" value="<%=data.last_name%>">
+          <input type="text" name="email" placeholder="Email" value='<%=data.email%>'>
+          <select class="" name="SubjectId">
+            <%dataEdit.forEach(subjects=>{%>
+              <option value="<%= subjects.id%>"><%=subjects.subject_name%></option>
+            <%})%>
+          </select>
+          <button type="submit" name="submit">Save</button>
+      </form>
+
+    </table>
+  </body>
+</html>

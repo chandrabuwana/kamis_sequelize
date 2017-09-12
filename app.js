@@ -6,14 +6,14 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 let index=require('./routes/index')
-let teachers=require('./routes/teacher')
-let subjects=require('./routes/subject')
-let students=require('./routes/student')
+let teacher=require('./routes/teacher')
+let subject=require('./routes/subject')
+let student=require('./routes/student')
 
 app.use('/',index)
-app.use('/teachers',teachers)
-app.use('/subjects',subjects)
-app.use('/students',students)
+app.use('/teacher',teacher)
+app.use('/subject',subject)
+app.use('/students',student)
 
 app.listen(8002,function(){
   console.log('App listening on port 8002!!!')
